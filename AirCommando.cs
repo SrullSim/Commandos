@@ -18,6 +18,12 @@ namespace Commandos
         }
 
 
+        // print status 
+        public void PrintStatus()
+        {
+            Console.WriteLine($"The Sea Commando {CodeName} is currently {Parachute}");
+        }
+
 
 
 

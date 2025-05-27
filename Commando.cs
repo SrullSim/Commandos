@@ -10,7 +10,7 @@ namespace Commandos
     internal class Commando
     {
 
-        private string Name;
+        private string Name; 
         public string CodeName { get; set; }
         public string[] Tools = new string[5];
         public string Status;

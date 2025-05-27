@@ -13,10 +13,18 @@
             AirCommando airCommando = new AirCommando("asi", "colonel", Tools, "praper");
             SeaCommando seaCommando = new SeaCommando("ali", "general", Tools, "swimming");
 
-            airCommando.Attack();
-            Console.WriteLine("=====================================");
-            seaCommando.Attack();
-
+            Commando[] attackers = new Commando[4]
+            {
+                commando,
+                airCommando,
+                seaCommando,
+                new AirCommando("mohamed", "colonel", Tools,"ppp")
+            };
+            foreach(Commando attacker in attackers)
+            {
+                attacker.Attack();
+                Console.WriteLine("==================");
+            }
 
         }
     }

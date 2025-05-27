@@ -14,7 +14,7 @@ namespace Commandos
         public string CodeName { get; set; }
         public string[] Tools = new string[5];
         public string Status;
-
+        public Weapon Weapon { get; set; }
 
         // constractor
         public Commando(string name, string codeName, string[] tools)
@@ -23,14 +23,16 @@ namespace Commandos
             this.CodeName = codeName;
             this.Tools = tools;
             this.Status = "standing";
+            this.Weapon = new Weapon("M16","ass",30);
         }
-
 
         // status walk 
         public void Walk()
         {
             this.Status = "walking";
+            
             Console.WriteLine($"the commando {Name} now walking");
+
         }
 
 
@@ -45,20 +47,23 @@ namespace Commandos
         // status attack
         public virtual void  Attack()
         {
+            this.Weapon.shoot();
             Console.WriteLine($"the commando {CodeName} now attacking");
+
         }
 
 
         // get name 
         public string SayName()
         {
+            
             Console.WriteLine("=== enter your rank ==== \n");
             string clearance = Console.ReadLine().ToLower();
-
             switch (clearance)
             {
                 case "general":
                     return this.Name;
+                    
                 case "colonel":
                     return this.CodeName;
                 case "solider":

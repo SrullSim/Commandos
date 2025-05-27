@@ -22,8 +22,12 @@
             };
             foreach(Commando attacker in attackers)
             {
-                attacker.Attack();
+                attacker.Walk();
+                Console.WriteLine($"The commando {attacker.SayName()} is currently {attacker.Status} with tools: {string.Join(", ", attacker.Tools)}");
                 Console.WriteLine("==================");
+                attacker.Attack();
+                Console.WriteLine(attacker.Weapon.bulletCount);
+
             }
 
         }

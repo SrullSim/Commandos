@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Commandos
 {
+    
     internal class Commando
     {
 
         public string Name;
         public string CodeName;
-        public string[] Tools;
+        public string[] Tools = new string[5];
         public string Status;
 
 
         // constractor
-        public void commando(string name, string codeName, string[] tools, string status)
+        public void commando(string name, string codeName, string[] tools)
         {
             this.Name = name;
             this.CodeName = codeName;
             this.Tools = tools;
-            this.Status = status;
+            this.Status = "standing";
         }
 
 

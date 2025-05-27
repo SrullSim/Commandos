@@ -10,14 +10,14 @@ namespace Commandos
     internal class Commando
     {
 
-        public string Name;
+        private string Name;
         public string CodeName;
         public string[] Tools = new string[5];
         public string Status;
 
 
         // constractor
-        public void commando(string name, string codeName, string[] tools)
+    public  Commando(string name, string codeName, string[] tools)
         {
             this.Name = name;
             this.CodeName = codeName;
@@ -48,6 +48,33 @@ namespace Commandos
             Console.WriteLine($"the commando {CodeName} now attacking");
         }
 
+
+        // get name 
+        public string SayName()
+        {
+            Console.WriteLine("=== enter your rank ==== \n");
+            string clearance = Console.ReadLine().ToLower();
+
+            switch (clearance)
+            {
+                case "general":
+                    Console.WriteLine(this.Name);
+                    return this.Name;
+                case "colonel":
+                    Console.WriteLine(this.CodeName);
+                    return this.CodeName;
+                case "solider":
+                    return "you are not allowed to know the name";
+                default:
+                    Console.WriteLine( "invalid input");
+                    SayName();
+                    return "you are not allowed to know the name";
+
+            }
+
+
+
+        }
 
 
 

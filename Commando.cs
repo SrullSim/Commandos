@@ -43,7 +43,7 @@ namespace Commandos
 
 
         // status attack
-        public void Attack()
+        public virtual void  Attack()
         {
             Console.WriteLine($"the commando {CodeName} now attacking");
         }

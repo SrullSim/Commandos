@@ -25,6 +25,11 @@ namespace Commandos
         }
 
 
+        // override attack method
+        public override void Attack()
+        {
+            Console.WriteLine($"the {CodeName} now attacking from the air ");
+        }
 
 
 
